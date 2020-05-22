@@ -1,0 +1,27 @@
+﻿@model IEnumerable<StoreBook.Models.Book>
+
+@{
+    ViewData["Title"] = "Каталог книг";
+}
+
+<h3>Каталог книг</h3>
+<div>
+    @foreach (var item in Model)
+    {
+
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@Html.DisplayFor(modelItem => item.ImageURL)" alt="" />
+                <div class="caption">
+                    <h3 class="pull-right">@Html.DisplayFor(modelItem => item.Price)</h3>
+                    <h3>
+                        <a asp-controller="Catalog" asp-action="ShowItem" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Name)</a>
+                    </h3>
+                    <p>@Html.DisplayFor(modelItem => item.Author.Name)</p>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+<br>

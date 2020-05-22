@@ -1,0 +1,92 @@
+﻿@model StoreBook.Models.Book
+
+@{
+    ViewData["Title"] = "Информация о книге";
+}
+
+<h2>Информация о книге</h2>
+
+<div>
+    <h3>@Html.DisplayFor(model => model.Name)</h3>
+    <hr />
+    <table>
+        <tr>
+            <td>
+                <img src="../../@Html.DisplayFor(model => model.ImageURL)" alt="" />
+            </td>
+            <td style="padding-left:30px;">
+                @Html.DisplayFor(model => model.Description)
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td width="100">
+                <b>
+                    @Html.DisplayNameFor(model => model.Name)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    @Html.DisplayNameFor(model => model.Author)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Author.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    @Html.DisplayNameFor(model => model.Genre)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Genre.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    @Html.DisplayNameFor(model => model.Editor)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Editor.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    @Html.DisplayNameFor(model => model.Publish)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Publish.Name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    @Html.DisplayNameFor(model => model.Series)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Series.Name)
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+<div>
+    <a asp-controller="Catalog" asp-action="Index">Вернуться в каталог</a>
+</div>
